@@ -3,6 +3,9 @@ import 'package:flutter_application_1/login.dart';
 
 //the main function is the starting point for all our flutter apps.
 void main() {
+  var mainAxisAlignment2 = MainAxisAlignment;
+  var mainAxisAlignment;
+  var mainAxisAlignment3 = mainAxisAlignment;
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
@@ -14,19 +17,26 @@ void main() {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    child: const Text(
-                      'Logine',
-                      style: TextStyle(
-                        fontFamily: 'Raleway',
-                        fontSize: 35,
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                      ),
+                    child: Column(
+                      children: const [
+                        Center(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              fontFamily: 'Raleway',
+                              fontSize: 35,
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ),
+                        Text("Welcome Back")
+                      ],
                     ),
                   ),
                 ),
@@ -64,6 +74,18 @@ void main() {
                 //   ),
                 // ),
                 //,
+                Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10.0, 10, 0, 0),
+                      child: Text('Email'),
+                    ),
+                  ],
+                ),
+
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
@@ -83,26 +105,41 @@ void main() {
                     )),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    color: Color.fromARGB(255, 218, 218, 218),
-                    child: Form(
-                        child: TextFormField(
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                          hintText: 'password',
-                          suffixIcon: Icon(Icons.remove_red_eye),
-                          border: OutlineInputBorder(),
-                          labelText: 'Enter your Password'),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        return null;
-                      },
-                    )),
-                  ),
+                Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                          child: Text('Password'),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        color: Color.fromARGB(255, 218, 218, 218),
+                        child: Form(
+                            child: TextFormField(
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                              hintText: 'password',
+                              suffixIcon: Icon(Icons.remove_red_eye),
+                              border: OutlineInputBorder(),
+                              labelText: 'Enter your Password'),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your password';
+                            }
+                            return null;
+                          },
+                        )),
+                      ),
+                    ),
+                  ],
                 ),
 
                 LoginButton(),
