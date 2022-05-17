@@ -20,7 +20,7 @@ void main() {
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
                     child: const Text(
-                      'Login',
+                      'Logine',
                       style: TextStyle(
                         fontFamily: 'Raleway',
                         fontSize: 35,
